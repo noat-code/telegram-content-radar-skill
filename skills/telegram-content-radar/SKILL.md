@@ -1,7 +1,7 @@
 ---
 name: telegram-content-radar
 description: Find original Telegram content ideas from public channels.
-version: 0.2.4
+version: 0.2.5
 author: Igor Zinchenko, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -50,23 +50,22 @@ content-radar-workspace/
 
 Copy the files from `templates/` to create this workspace. Do not put channels, credentials, findings, or drafts in the public skill repository.
 
-## First-Run Editorial Intake
+## Mandatory Editorial Interview
 
-Before analysing channels, ask for the minimum context needed to avoid generic recommendations. Ask in one compact batch where possible; use what the user already supplied and do not ask them to repeat it.
+**This is a hard gate before the first meaningful scan.** The agent must conduct a compact editorial interview, save the answers in the private `editorial-profile.md` and `config.yaml`, and use them as the scoring context. It must not infer the author's audience, voice, authority, or goals from competitor posts.
 
-Capture these fields in `editorial-profile.md` and `config.yaml`:
+The interview must establish:
 
-1. **Channel and audience** - channel name, platform, who reads it, and their current level.
-2. **Author position** - practitioner, educator, builder, analyst, or another role; what the author can honestly claim from experience.
-3. **Content lanes** - 3–6 recurring directions to look for.
-4. **Reader outcome** - what a good post helps the reader understand, decide, test, or avoid.
-5. **Voice and format preferences** - directness, depth, personal versus educational ratio, desired post length, and acceptable humour.
-6. **Evidence available** - experiments, projects, portfolio/process data, mistakes, screenshots, cases, or research the author can use.
-7. **Editorial boundaries** - taboo topics, prohibited claims, sources to avoid, and subjects requiring extra caution.
-8. **Success signals** - which matters more: replies, saves, forwards, trust, leads, subscriber growth, or a mix.
-9. **Cadence and output** - scan frequency, number of ideas per report, and whether the user wants only angles or draft-ready outlines.
+1. **Core reader** - who they are, their current stage, their job or context, the problem that brought them here, and what they are tired of in this niche.
+2. **Author position** - honest role, lived experience, available proof, and claims the author will not make.
+3. **Channel goal** - what the author wants readers to understand, decide, test, avoid, or change; and the main success metric for the next 1–3 months.
+4. **Content map** - core lanes, adjacent lanes, and topics that look relevant but are off-position.
+5. **Reader-job map** - for each core lane: reader pain, useful outcome, author's available proof, and fitting formats.
+6. **Voice and boundaries** - depth, personal/educational ratio, preferred formats, taboo topics, prohibited claims, and topics requiring caution.
+7. **Evidence inventory** - active experiments, cases, mistakes, data, artefacts, research, and topics where the author has no right to speak yet.
+8. **Decision rules** - what makes a source signal relevant, draft-ready, uncertain, or an automatic discard.
 
-If a field is missing, flag it as an assumption and ask only the targeted follow-up that materially changes the analysis.
+Use `templates/editorial-profile.example.md`. Ask in compact batches and reuse answers the author has already supplied. A full scan may not be called complete while the core reader, author role, channel goal, core lanes, taboo topics, or evidence inventory are unknown. In that case, ask targeted questions and mark any early result as **provisional**.
 
 ## Mandatory Security Rule: Telegram Login
 
@@ -133,6 +132,10 @@ Score five dimensions from 0 to 3, using `references/scoring-model.md`:
 - 12–15: develop into a draft-ready angle.
 
 A score never overrides the originality gate. Reject if the post would depend on copied wording, the competitor's personal story, their unverified recommendation, or borrowed authority.
+
+### Audience-Fit Gate
+
+Topic overlap is not audience fit. Before calling an idea `Now` or draft-ready, confirm the source post and the author's core reader overlap in **reader context, problem, desired outcome, and acceptable author position**. A post about the same broad topic but aimed at a different reader job, level, or promise is off-position. If the overlap cannot be established from the editorial interview and source signal, use `Question for author` or `Maybe / needs evidence`, never a confident recommendation.
 
 The transformation must be:
 

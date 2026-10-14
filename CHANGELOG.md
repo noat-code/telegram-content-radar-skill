@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.5 - 2026-10-14
+
+- Made the editorial interview a hard gate before the first meaningful scan.
+- Expanded the private editorial profile with core-reader, author-position, reader-job, evidence, and decision-rule maps.
+- Added an audience-fit rule: an idea cannot be draft-ready when the audience, reader job, or author proof is unknown.
+
 ## 0.2.4 - 2026-10-14
 
 - Made report delivery in chat mandatory before ideation or drafting.
