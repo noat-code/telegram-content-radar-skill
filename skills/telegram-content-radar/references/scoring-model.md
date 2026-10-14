@@ -2,6 +2,12 @@
 
 Score every candidate from 0 to 3 on each dimension. The score estimates whether a source signal can become an original post for this user, not whether the source post was popular.
 
+## Audience-fit gate (before scoring)
+
+A shared broad topic is not enough. Before scoring, confirm that the source and author's core reader overlap in reader context, problem, desired outcome, and acceptable author position. If the post serves a different reader job, level, or promise, reject it as off-position. If the fit is plausible but unknown, mark it `Question for author` or `Maybe / needs evidence` rather than pretending the score is certain.
+
+Audience fit is a gate, not a sixth point category. The total score remains 0–15.
+
 ## Relevance to the user's channel
 
 - `0` - outside the editorial profile.
