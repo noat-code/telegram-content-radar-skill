@@ -1,0 +1,26 @@
+schema_version: 1
+
+project:
+  name: ""
+  language: "ru"
+  primary_platform: "telegram"
+
+research:
+  lookback_days: 14
+  max_posts_per_channel: 30
+  scan_frequency: "weekly"
+
+content_lanes: []
+
+filters:
+  priority_topics: []
+  excluded_topics: []
+  prohibited_claims: []
+
+scoring:
+  min_score_for_idea_bank: 8
+  min_score_for_draft: 12
+
+output:
+  ideas_per_report: 5
+  draft_mode: "angles_and_outlines"

@@ -1,0 +1,2 @@
+handle,url,role,priority,status,notes
+@example_channel,https://t.me/example_channel,direct_or_adjacent,medium,active,"Why this channel is monitored and which parts are excluded."

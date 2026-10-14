@@ -1,0 +1,19 @@
+# Private Telegram workspace data and credentials
+.env
+*.session
+*.session-journal
+
+# Python environments and caches
+.venv/
+.venv-content-radar/
+__pycache__/
+*.py[cod]
+
+# Collected private source material
+findings/
+ideas/
+reports/
+content-radar-workspace/
+
+# OS metadata
+.DS_Store

@@ -1,0 +1,8 @@
+# Telegram credentials and authenticated session
+.env
+*.session
+*.session-journal
+
+# Local virtual environment and collected user data
+.venv-content-radar/
+findings/*.jsonl
